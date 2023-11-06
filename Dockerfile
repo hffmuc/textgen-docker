@@ -61,7 +61,7 @@ ENV NVIDIA_VISIBLE_DEVICES=all
 
 # copy the models to the docker image /home/text-generation-webui/models/
 #COPY models /home/text-generation-webui/models/
-
+RUN apt-get update && apt-get install -y wget
 # Download vicuna-13b-free model
 RUN wget -c https://huggingface.co/reeducator/vicuna-13b-free/resolve/main/ggml-vicuna-13b-free-v230502-q5_0.bin -O /home/text-generation-webui/models/ggml-vicuna-13b-free-v230502-q5_0.bin
 
